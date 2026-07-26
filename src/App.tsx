@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import HomePage from './pages/HomePage';
+import CategoryPage from './pages/CategoryPage';
 import AnnouncementBar from './components/AnnouncementBar';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import CategoryGrid from './components/CategoryGrid';
-import FlashDeals from './components/FlashDeals';
-import PopularProducts from './components/PopularProducts';
-import TrustSection from './components/TrustSection';
-import AppDownload from './components/AppDownload';
-import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -32,21 +28,18 @@ function App() {
   const addToCart = () => setCartCount(prev => prev + 1);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <BrowserRouter>
       <AnnouncementBar />
-      <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} cartCount={cartCount} />
-      
-      <main className="flex-grow">
-        <Hero />
-        <CategoryGrid />
-        <FlashDeals addToCart={addToCart} />
-        <PopularProducts addToCart={addToCart} />
-        <TrustSection />
-        <AppDownload />
-      </main>
-
-      <Footer />
-    </div>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<MainLayout isDarkMode={isDarkMode} toggleTheme={toggleTheme} cartCount={cartCount} />}
+        >
+          <Route index element={<HomePage addToCart={addToCart} />} />
+          <Route path="category/:id" element={<CategoryPage addToCart={addToCart} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
