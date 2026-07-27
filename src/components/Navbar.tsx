@@ -6,9 +6,10 @@ interface NavbarProps {
   isDarkMode: boolean;
   toggleTheme: () => void;
   cartCount: number;
+  toggleSidebar?: () => void;
 }
 
-export default function Navbar({ isDarkMode, toggleTheme, cartCount }: NavbarProps) {
+export default function Navbar({ isDarkMode, toggleTheme, cartCount, toggleSidebar }: NavbarProps) {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -25,7 +26,7 @@ export default function Navbar({ isDarkMode, toggleTheme, cartCount }: NavbarPro
         
         {/* Logo & Mobile Menu */}
         <div className="flex items-center gap-3">
-          <button className="lg:hidden text-gray-700 dark:text-gray-300 hover:text-brand-orange transition-colors">
+          <button onClick={toggleSidebar} className="lg:hidden text-gray-700 dark:text-gray-300 hover:text-brand-orange transition-colors">
             <Menu size={28} />
           </button>
           <Link to="/" className="text-3xl md:text-4xl font-black text-brand-orange tracking-tighter drop-shadow-sm hover:scale-105 transition-transform">
