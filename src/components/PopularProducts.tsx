@@ -47,9 +47,11 @@ export default function PopularProducts({ addToCart }: PopularProductsProps) {
         </div>
       </div>
       
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="flex overflow-x-auto pb-6 -mx-4 px-4 md:mx-0 md:px-0 gap-4 snap-x scrollbar-hide">
         {filteredProducts.slice(0, 10).map(product => (
-          <ProductCard key={product.id} {...product} id={String(product.id)} price={`৳${product.price}`} originalPrice={product.originalPrice ? `৳${product.originalPrice}` : undefined} onAddToCart={addToCart} />
+          <div key={product.id} className="min-w-[200px] sm:min-w-[240px] md:min-w-[280px] snap-start flex-none">
+            <ProductCard {...product} id={String(product.id)} price={`৳${product.price}`} originalPrice={product.originalPrice ? `৳${product.originalPrice}` : undefined} onAddToCart={addToCart} />
+          </div>
         ))}
       </div>
     </section>
