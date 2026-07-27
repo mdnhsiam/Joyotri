@@ -20,10 +20,10 @@ export default function Sidebar({ isOpen = false, setIsOpen }: SidebarProps) {
 
       {/* Sidebar Content */}
       <aside className={`
-        fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] w-64 bg-white dark:bg-brand-dark border-r border-gray-200 dark:border-gray-800 z-50 overflow-y-auto no-scrollbar shadow-2xl lg:shadow-none transition-transform duration-300
-        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} lg:block flex-shrink-0
+        fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] bg-white dark:bg-brand-dark border-r border-gray-200 dark:border-gray-800 z-50 overflow-y-auto no-scrollbar shadow-2xl lg:shadow-none transition-all duration-300 flex-shrink-0
+        ${isOpen ? 'w-64 translate-x-0 opacity-100' : 'w-0 -translate-x-full opacity-0 pointer-events-none'}
       `}>
-        <div className="py-6 px-4">
+        <div className="py-6 px-4 w-64">
           <div className="flex items-center justify-between mb-4 px-3">
             <h3 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
               All Categories

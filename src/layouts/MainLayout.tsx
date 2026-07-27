@@ -11,7 +11,13 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ isDarkMode, toggleTheme, cartCount }: MainLayoutProps) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // Default to open on desktop, closed on mobile
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 1024;
+    }
+    return true;
+  });
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 

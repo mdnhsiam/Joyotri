@@ -26,7 +26,7 @@ export default function Navbar({ isDarkMode, toggleTheme, cartCount, toggleSideb
         
         {/* Logo & Mobile Menu */}
         <div className="flex items-center gap-3">
-          <button onClick={toggleSidebar} className="lg:hidden text-gray-700 dark:text-gray-300 hover:text-brand-orange transition-colors">
+          <button onClick={toggleSidebar} className="text-gray-700 dark:text-gray-300 hover:text-brand-orange transition-colors">
             <Menu size={28} />
           </button>
           <Link to="/" className="text-3xl md:text-4xl font-black text-brand-orange tracking-tighter drop-shadow-sm hover:scale-105 transition-transform">
