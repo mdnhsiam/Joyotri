@@ -50,7 +50,7 @@ export default function FlashDeals({ addToCart }: FlashDealsProps) {
         <div className="flex overflow-x-auto pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 gap-4 snap-x scrollbar-hide">
           {flashProducts.map(product => (
             <div key={product.id} className="min-w-[200px] sm:min-w-[240px] md:min-w-[280px] snap-start flex-none">
-              <ProductCard {...product} addToCart={addToCart} />
+              <ProductCard {...product} id={String(product.id)} onAddToCart={addToCart} />
             </div>
           ))}
         </div>

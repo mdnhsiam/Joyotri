@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
+import Footer from '../components/Footer';
 
 interface MainLayoutProps {
   isDarkMode: boolean;
