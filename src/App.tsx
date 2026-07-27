@@ -3,6 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import SearchResultsPage from './pages/SearchResultsPage';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import AccountPage from './pages/AccountPage';
 import AnnouncementBar from './components/AnnouncementBar';
 
 function App() {
@@ -37,6 +42,11 @@ function App() {
         >
           <Route index element={<HomePage addToCart={addToCart} />} />
           <Route path="category/:id" element={<CategoryPage addToCart={addToCart} />} />
+          <Route path="product/:id" element={<ProductDetailPage addToCart={addToCart} />} />
+          <Route path="search" element={<SearchResultsPage addToCart={addToCart} />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="account" element={<AccountPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
