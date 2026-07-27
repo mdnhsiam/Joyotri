@@ -1,0 +1,45 @@
+// Homepage category-specific product data for category rows
+export const homepageCategoryProducts = {
+  'fruits-veg': [
+    { id: 101, name: 'Fresh Red Apple', weight: '1 kg', price: 250, originalPrice: 300, image: 'https://images.pexels.com/photos/206959/pexels-photo-206959.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 102, name: 'Local Bananas', weight: '1 Dozen', price: 80, image: 'https://images.pexels.com/photos/1093038/pexels-photo-1093038.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 103, name: 'Fresh Potatoes', weight: '1 kg', price: 45, originalPrice: 50, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80&w=400' },
+    { id: 104, name: 'Tomatoes', weight: '500 gm', price: 40, image: 'https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 105, name: 'Green Chili', weight: '250 gm', price: 25, image: 'https://images.pexels.com/photos/1374651/pexels-photo-1374651.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 106, name: 'Fresh Onion', weight: '1 kg', price: 60, image: 'https://images.pexels.com/photos/4197444/pexels-photo-4197444.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 107, name: 'Garlic', weight: '250 gm', price: 45, image: 'https://images.pexels.com/photos/928247/pexels-photo-928247.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 108, name: 'Cucumber', weight: '500 gm', price: 30, image: 'https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  ],
+  'meat-fish': [
+    { id: 201, name: 'Premium Beef', weight: '1 kg', price: 750, originalPrice: 800, image: 'https://images.pexels.com/photos/618775/pexels-photo-618775.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 202, name: 'Chicken Breast', weight: '1 kg', price: 350, image: 'https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 203, name: 'Whole Chicken', weight: '1.2 kg', price: 420, originalPrice: 480, image: 'https://images.pexels.com/photos/1352270/pexels-photo-1352270.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 204, name: 'Mutton (Bone-in)', weight: '1 kg', price: 1100, image: 'https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 205, name: 'Rui Fish', weight: '1 kg', price: 350, image: 'https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 206, name: 'Hilsha Fish', weight: '1 pc', price: 800, originalPrice: 950, image: 'https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  ],
+  'dairy-eggs': [
+    { id: 301, name: 'Farm Fresh Eggs', weight: '12 pcs', price: 140, image: 'https://images.pexels.com/photos/162712/egg-white-food-protein-162712.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 302, name: 'Aarong Full Cream Milk', weight: '1 Liter', price: 90, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=400' },
+    { id: 303, name: 'Plain Yoghurt', weight: '500 gm', price: 65, image: 'https://images.pexels.com/photos/414262/pexels-photo-414262.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 304, name: 'Butter (Salted)', weight: '200 gm', price: 180, image: 'https://images.pexels.com/photos/531334/pexels-photo-531334.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 305, name: 'Paneer', weight: '200 gm', price: 120, image: 'https://images.pexels.com/photos/4187589/pexels-photo-4187589.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 306, name: 'Cream Cheese', weight: '150 gm', price: 250, image: 'https://images.pexels.com/photos/773253/pexels-photo-773253.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  ],
+  'beverages': [
+    { id: 401, name: 'Pran Mango Juice', weight: '1 Liter', price: 90, image: 'https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 402, name: 'Coca-Cola', weight: '2 Liter', price: 130, image: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 403, name: 'Ispahani Tea', weight: '400 gm', price: 220, image: 'https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 404, name: 'Nescafe Classic', weight: '200 gm', price: 350, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 405, name: 'Mineral Water', weight: '5 Liter', price: 80, image: 'https://images.pexels.com/photos/1000084/pexels-photo-1000084.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 406, name: 'Fresh Orange Juice', weight: '1 Liter', price: 150, originalPrice: 180, image: 'https://images.pexels.com/photos/158053/fresh-orange-juice-squeezed-refreshing-citrus-158053.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  ],
+  'snacks': [
+    { id: 501, name: 'Potato Crackers', weight: '25 gm', price: 15, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 502, name: 'Maggi Noodles', weight: '8 pcs', price: 150, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 503, name: 'Pran Chanachur', weight: '150 gm', price: 50, image: 'https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 504, name: 'Mixed Nuts', weight: '200 gm', price: 280, originalPrice: 320, image: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 505, name: 'Biscuit Pack', weight: '300 gm', price: 65, image: 'https://images.pexels.com/photos/890577/pexels-photo-890577.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    { id: 506, name: 'Chocolate Bar', weight: '100 gm', price: 120, image: 'https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  ],
+};

@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
+import FloatingCart from '../components/FloatingCart';
 import Footer from '../components/Footer';
 
 interface MainLayoutProps {
@@ -11,7 +12,6 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ isDarkMode, toggleTheme, cartCount }: MainLayoutProps) {
-  // Sidebar starts closed; it's an overlay drawer, not a layout column
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
@@ -25,15 +25,17 @@ export default function MainLayout({ isDarkMode, toggleTheme, cartCount }: MainL
         toggleSidebar={toggleSidebar} 
       />
 
-      {/* Sidebar is a fixed overlay — completely independent of content flow */}
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       
-      {/* Main content always takes full width */}
       <main className="flex-1 w-full">
         <Outlet />
       </main>
+
+      {/* Floating cart widget — always visible */}
+      <FloatingCart cartCount={cartCount} />
 
       <Footer />
     </div>
   );
 }
+
