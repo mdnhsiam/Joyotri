@@ -49,7 +49,7 @@ export default function PopularProducts({ addToCart }: PopularProductsProps) {
       
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {filteredProducts.slice(0, 10).map(product => (
-          <ProductCard key={product.id} {...product} id={String(product.id)} onAddToCart={addToCart} />
+          <ProductCard key={product.id} {...product} id={String(product.id)} price={`৳${product.price}`} originalPrice={product.originalPrice ? `৳${product.originalPrice}` : undefined} onAddToCart={addToCart} />
         ))}
       </div>
     </section>
