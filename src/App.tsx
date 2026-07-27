@@ -11,16 +11,28 @@ import AccountPage from './pages/AccountPage';
 import AnnouncementBar from './components/AnnouncementBar';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-
-  useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDarkMode(true);
+  // Theme state with localStorage persistence
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('joyotri_theme');
+      if (saved) return saved === 'dark';
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
-  }, []);
+    return false;
+  });
 
+  // Cart count state with localStorage persistence
+  const [cartCount, setCartCount] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('joyotri_cart');
+      if (saved) return parseInt(saved, 10);
+    }
+    return 0;
+  });
+
+  // Persist theme
   useEffect(() => {
+    localStorage.setItem('joyotri_theme', isDarkMode ? 'dark' : 'light');
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -31,6 +43,11 @@ function App() {
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
   
   const addToCart = () => setCartCount(prev => prev + 1);
+
+  // Persist cart
+  useEffect(() => {
+    localStorage.setItem('joyotri_cart', cartCount.toString());
+  }, [cartCount]);
 
   return (
     <BrowserRouter>

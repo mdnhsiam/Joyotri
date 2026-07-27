@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
@@ -11,13 +11,19 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ isDarkMode, toggleTheme, cartCount }: MainLayoutProps) {
-  // Default to open on desktop, closed on mobile
+  // Default to open on desktop, closed on mobile, persist via localStorage
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
     if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('joyotri_sidebar');
+      if (saved) return saved === 'open';
       return window.innerWidth >= 1024;
     }
     return true;
   });
+
+  useEffect(() => {
+    localStorage.setItem('joyotri_sidebar', isSidebarOpen ? 'open' : 'closed');
+  }, [isSidebarOpen]);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
