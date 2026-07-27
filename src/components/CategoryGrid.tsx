@@ -3,7 +3,7 @@ import { categories } from '../data/categories';
 
 export default function CategoryGrid() {
   return (
-    <section className="py-12 w-full px-4 lg:px-8">
+    <section className="py-12 container mx-auto px-4 lg:px-8">
       <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Shop by Category</h2>
       
       <div className="flex overflow-x-auto pb-6 -mx-4 px-4 md:mx-0 md:px-0 gap-4 snap-x scrollbar-hide">

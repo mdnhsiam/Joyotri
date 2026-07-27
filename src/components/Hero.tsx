@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-brand-orange/20 dark:bg-brand-orange/10 blur-[100px] animate-pulse"></div>
       <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] rounded-full bg-brand-yellow/20 dark:bg-brand-yellow/10 blur-[80px]"></div>
       
-      <div className="w-full px-4 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           
           {/* Left Content */}

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
@@ -11,21 +11,10 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ isDarkMode, toggleTheme, cartCount }: MainLayoutProps) {
-  // Default to open on desktop, closed on mobile, persist via localStorage
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('joyotri_sidebar');
-      if (saved) return saved === 'open';
-      return window.innerWidth >= 1024;
-    }
-    return true;
-  });
+  // Sidebar starts closed; it's an overlay drawer, not a layout column
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  useEffect(() => {
-    localStorage.setItem('joyotri_sidebar', isSidebarOpen ? 'open' : 'closed');
-  }, [isSidebarOpen]);
-
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-light dark:bg-brand-dark transition-colors duration-300">
@@ -35,14 +24,14 @@ export default function MainLayout({ isDarkMode, toggleTheme, cartCount }: MainL
         cartCount={cartCount} 
         toggleSidebar={toggleSidebar} 
       />
+
+      {/* Sidebar is a fixed overlay — completely independent of content flow */}
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       
-      <div className="flex flex-1 container mx-auto relative overflow-hidden lg:overflow-visible">
-        <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-        
-        <main className="flex-1 w-full bg-white/50 dark:bg-gray-900/50 min-h-[calc(100vh-5rem)]">
-          <Outlet />
-        </main>
-      </div>
+      {/* Main content always takes full width */}
+      <main className="flex-1 w-full">
+        <Outlet />
+      </main>
 
       <Footer />
     </div>

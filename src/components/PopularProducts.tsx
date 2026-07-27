@@ -26,7 +26,7 @@ export default function PopularProducts({ addToCart }: PopularProductsProps) {
     : products.filter(p => p.category === activeTab || p.category === 'Best Sellers'); // Fallback to show some items
 
   return (
-    <section className="py-12 w-full px-4 lg:px-8">
+    <section className="py-12 container mx-auto px-4 lg:px-8">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Popular Products</h2>
         
